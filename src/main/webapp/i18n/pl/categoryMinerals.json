@@ -1,0 +1,22 @@
+{
+  "infinityshoppingApp": {
+    "categoryMinerals": {
+      "home": {
+        "title": "Kategoria Minerały",
+        "refreshListLabel": "Odśwież",
+        "notFound": "No Category Minerals found"
+      },
+      "productCategoryEnum": "Kategoria",
+      "name": "Nazwa",
+      "quantity": "Ilość",
+      "priceNet": "Netto",
+      "vat": "Vat",
+      "priceGross": "Brutto",
+      "stock": "Magazyn",
+      "description": "Opis",
+      "createTime": "Utworzono",
+      "updateTime": "Aktualizacja",
+      "image": "Zdjęcie"
+    }
+  }
+}

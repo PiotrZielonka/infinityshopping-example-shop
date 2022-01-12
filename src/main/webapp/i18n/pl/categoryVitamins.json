@@ -1,0 +1,22 @@
+{
+  "infinityshoppingApp": {
+    "categoryVitamins": {
+      "home": {
+        "title": "Kategoria Witaminy",
+        "refreshListLabel": "Odśwież",
+        "notFound": "No Category Vitamins found"
+      },
+      "productCategoryEnum": "Kategoria",
+      "name": "Nazwa",
+      "quantity": "Ilość",
+      "priceNet": "Netto",
+      "vat": "Vat",
+      "priceGross": "Brutto",
+      "stock": "Magazyn",
+      "description": "Opis",
+      "createTime": "Utworzono",
+      "updateTime": "Aktualizacja",
+      "image": "Zdjęcie"
+    }
+  }
+}

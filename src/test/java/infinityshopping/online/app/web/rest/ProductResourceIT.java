@@ -48,6 +48,16 @@ class ProductResourceIT implements AddVat {
       = ProductCategoryEnum.Vitamins;
   private static final ProductCategoryEnum UPDATED_PRODUCT_CATEGORY_ENUM
       = ProductCategoryEnum.Minerals;
+  private static final ProductCategoryEnum PRODUCT_CATEGORY_ENUM_Vitamins
+      = ProductCategoryEnum.Vitamins;
+  private static final ProductCategoryEnum PRODUCT_CATEGORY_ENUM_Minerals
+      = ProductCategoryEnum.Minerals;
+  private static final ProductCategoryEnum PRODUCT_CATEGORY_ENUM_Aloes
+      = ProductCategoryEnum.Aloes;
+  private static final ProductCategoryEnum PRODUCT_CATEGORY_ENUM_Collagen
+      = ProductCategoryEnum.Collagen;
+  private static final ProductCategoryEnum PRODUCT_CATEGORY_ENUM_Probiotics
+      = ProductCategoryEnum.Probiotics;
 
   private static final String DEFAULT_NAME = "AAAAAAAAAA";
   private static final String UPDATED_NAME = "BBBBBBBBBB";
@@ -404,6 +414,250 @@ class ProductResourceIT implements AddVat {
         .andExpect(jsonPath("$.[*].imageContentType").value(hasItem(DEFAULT_IMAGE_CONTENT_TYPE)))
         .andExpect(
             jsonPath("$.[*].image").value(hasItem(Base64Utils.encodeToString(DEFAULT_IMAGE))));
+  }
+
+  @Test
+  @Transactional
+  public void getAllProductsByCategoryProbiotics() throws Exception {
+    // Initialize the database
+    product.setPriceGross(defaultProperPriceGross);
+    product.setProductCategoryEnum(PRODUCT_CATEGORY_ENUM_Probiotics);
+    productRepository.saveAndFlush(product);
+
+    // Get all the productListByCategoryProbiotics
+    restProductMockMvc.perform(get("/api/category-probiotics?sort=id,desc"))
+        .andExpect(status().isOk())
+        .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
+        .andExpect(
+            jsonPath("$.[*].id").value(hasItem(product.getId().intValue())))
+        .andExpect(jsonPath("$.[*].name").value(hasItem(DEFAULT_NAME)))
+        .andExpect(
+            jsonPath("$.[*].priceGross").value(hasItem(sameNumber(defaultProperPriceGross))))
+        .andExpect(jsonPath("$.[*].imageContentType").value(hasItem(DEFAULT_IMAGE_CONTENT_TYPE)))
+        .andExpect(
+            jsonPath("$.[*].image").value(hasItem(Base64Utils.encodeToString(DEFAULT_IMAGE))));
+  }
+
+  @Test
+  @Transactional
+  public void getAllProductsByCategoryProbioticsShouldNotGetAnotherEntity() throws Exception {
+    // Initialize the database
+    product.setPriceGross(defaultProperPriceGross);
+    product.setProductCategoryEnum(PRODUCT_CATEGORY_ENUM_Vitamins);
+    productRepository.saveAndFlush(product);
+
+    // Get all the productListByCategoryProbiotics
+    restProductMockMvc.perform(get("/api/category-probiotics?sort=id,desc"))
+        .andExpect(status().isOk())
+        .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
+        .andExpect(jsonPath("$.[*].id").doesNotExist())
+        .andExpect(jsonPath("$.[*].productCategoryEnum").doesNotExist())
+        .andExpect(jsonPath("$.[*].name").doesNotExist())
+        .andExpect(jsonPath("$.[*].quantity").doesNotExist())
+        .andExpect(jsonPath("$.[*].priceNet").doesNotExist())
+        .andExpect(jsonPath("$.[*].vat").doesNotExist())
+        .andExpect(jsonPath("$.[*].priceGross").doesNotExist())
+        .andExpect(jsonPath("$.[*].stock").doesNotExist())
+        .andExpect(jsonPath("$.[*].description").doesNotExist())
+        .andExpect(jsonPath("$.[*].createTime").doesNotExist())
+        .andExpect(jsonPath("$.[*].updateTime").doesNotExist())
+        .andExpect(jsonPath("$.[*].imageContentType").doesNotExist())
+        .andExpect(jsonPath("$.[*].image").doesNotExist());
+  }
+
+  @Test
+  @Transactional
+  public void getAllProductsByCategoryVitamins() throws Exception {
+    // Initialize the database
+    product.setPriceGross(defaultProperPriceGross);
+    product.setProductCategoryEnum(PRODUCT_CATEGORY_ENUM_Vitamins);
+    productRepository.saveAndFlush(product);
+
+    // Get all the productListByCategoryVitamins
+    restProductMockMvc.perform(get("/api/category-vitamins?sort=id,desc"))
+        .andExpect(status().isOk())
+        .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
+        .andExpect(
+            jsonPath("$.[*].id").value(hasItem(product.getId().intValue())))
+        .andExpect(jsonPath("$.[*].name").value(hasItem(DEFAULT_NAME)))
+        .andExpect(
+            jsonPath("$.[*].priceGross").value(hasItem(sameNumber(defaultProperPriceGross))))
+        .andExpect(jsonPath("$.[*].imageContentType").value(hasItem(DEFAULT_IMAGE_CONTENT_TYPE)))
+        .andExpect(
+            jsonPath("$.[*].image").value(hasItem(Base64Utils.encodeToString(DEFAULT_IMAGE))));
+  }
+
+  @Test
+  @Transactional
+  public void getAllProductsByCategoryVitaminsShouldNotGetAnotherEntity() throws Exception {
+    // Initialize the database
+    product.setPriceGross(defaultProperPriceGross);
+    product.setProductCategoryEnum(PRODUCT_CATEGORY_ENUM_Probiotics);
+    productRepository.saveAndFlush(product);
+
+    // Get all the productListByCategoryProbiotics
+    restProductMockMvc.perform(get("/api/category-vitamins?sort=id,desc"))
+        .andExpect(status().isOk())
+        .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
+        .andExpect(jsonPath("$.[*].id").doesNotExist())
+        .andExpect(jsonPath("$.[*].productCategoryEnum").doesNotExist())
+        .andExpect(jsonPath("$.[*].name").doesNotExist())
+        .andExpect(jsonPath("$.[*].quantity").doesNotExist())
+        .andExpect(jsonPath("$.[*].priceNet").doesNotExist())
+        .andExpect(jsonPath("$.[*].vat").doesNotExist())
+        .andExpect(jsonPath("$.[*].priceGross").doesNotExist())
+        .andExpect(jsonPath("$.[*].stock").doesNotExist())
+        .andExpect(jsonPath("$.[*].description").doesNotExist())
+        .andExpect(jsonPath("$.[*].createTime").doesNotExist())
+        .andExpect(jsonPath("$.[*].updateTime").doesNotExist())
+        .andExpect(jsonPath("$.[*].imageContentType").doesNotExist())
+        .andExpect(jsonPath("$.[*].image").doesNotExist());
+  }
+
+  @Test
+  @Transactional
+  public void getAllProductsByCategoryMinerals() throws Exception {
+    // Initialize the database
+    product.setPriceGross(defaultProperPriceGross);
+    product.setProductCategoryEnum(PRODUCT_CATEGORY_ENUM_Minerals);
+    productRepository.saveAndFlush(product);
+
+    // Get all the productListByCategoryMinerals
+    restProductMockMvc.perform(get("/api/category-minerals?sort=id,desc"))
+        .andExpect(status().isOk())
+        .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
+        .andExpect(
+            jsonPath("$.[*].id").value(hasItem(product.getId().intValue())))
+        .andExpect(jsonPath("$.[*].name").value(hasItem(DEFAULT_NAME)))
+        .andExpect(
+            jsonPath("$.[*].priceGross").value(hasItem(sameNumber(defaultProperPriceGross))))
+        .andExpect(jsonPath("$.[*].imageContentType").value(hasItem(DEFAULT_IMAGE_CONTENT_TYPE)))
+        .andExpect(
+            jsonPath("$.[*].image").value(hasItem(Base64Utils.encodeToString(DEFAULT_IMAGE))));
+  }
+
+  @Test
+  @Transactional
+  public void getAllProductsByCategoryMineralsShouldNotGetAnotherEntity() throws Exception {
+    // Initialize the database
+    product.setPriceGross(defaultProperPriceGross);
+    product.setProductCategoryEnum(PRODUCT_CATEGORY_ENUM_Probiotics);
+    productRepository.saveAndFlush(product);
+
+    // Get all the productListByCategoryMinerals
+    restProductMockMvc.perform(get("/api/category-minerals?sort=id,desc"))
+        .andExpect(status().isOk())
+        .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
+        .andExpect(jsonPath("$.[*].id").doesNotExist())
+        .andExpect(jsonPath("$.[*].productCategoryEnum").doesNotExist())
+        .andExpect(jsonPath("$.[*].name").doesNotExist())
+        .andExpect(jsonPath("$.[*].quantity").doesNotExist())
+        .andExpect(jsonPath("$.[*].priceNet").doesNotExist())
+        .andExpect(jsonPath("$.[*].vat").doesNotExist())
+        .andExpect(jsonPath("$.[*].priceGross").doesNotExist())
+        .andExpect(jsonPath("$.[*].stock").doesNotExist())
+        .andExpect(jsonPath("$.[*].description").doesNotExist())
+        .andExpect(jsonPath("$.[*].createTime").doesNotExist())
+        .andExpect(jsonPath("$.[*].updateTime").doesNotExist())
+        .andExpect(jsonPath("$.[*].imageContentType").doesNotExist())
+        .andExpect(jsonPath("$.[*].image").doesNotExist());
+  }
+
+  @Test
+  @Transactional
+  public void getAllProductsByCategoryAloes() throws Exception {
+    // Initialize the database
+    product.setPriceGross(defaultProperPriceGross);
+    product.setProductCategoryEnum(PRODUCT_CATEGORY_ENUM_Aloes);
+    productRepository.saveAndFlush(product);
+
+    // Get all the productListByCategoryAloes
+    restProductMockMvc.perform(get("/api/category-aloes?sort=id,desc"))
+        .andExpect(status().isOk())
+        .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
+        .andExpect(jsonPath("$.[*].id").value(hasItem(product.getId().intValue())))
+        .andExpect(jsonPath("$.[*].name").value(hasItem(DEFAULT_NAME)))
+        .andExpect(
+            jsonPath("$.[*].priceGross").value(hasItem(sameNumber(defaultProperPriceGross))))
+        .andExpect(jsonPath("$.[*].imageContentType").value(hasItem(DEFAULT_IMAGE_CONTENT_TYPE)))
+        .andExpect(
+            jsonPath("$.[*].image").value(hasItem(Base64Utils.encodeToString(DEFAULT_IMAGE))));
+  }
+
+  @Test
+  @Transactional
+  public void getAllProductsByCategoryAloesShouldNotGetAnotherEntity() throws Exception {
+    // Initialize the database
+    product.setPriceGross(defaultProperPriceGross);
+    product.setProductCategoryEnum(PRODUCT_CATEGORY_ENUM_Probiotics);
+    productRepository.saveAndFlush(product);
+
+    // Get all the productListByCategoryAloes
+    restProductMockMvc.perform(get("/api/category-aloes?sort=id,desc"))
+        .andExpect(status().isOk())
+        .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
+        .andExpect(jsonPath("$.[*].id").doesNotExist())
+        .andExpect(jsonPath("$.[*].productCategoryEnum").doesNotExist())
+        .andExpect(jsonPath("$.[*].name").doesNotExist())
+        .andExpect(jsonPath("$.[*].quantity").doesNotExist())
+        .andExpect(jsonPath("$.[*].priceNet").doesNotExist())
+        .andExpect(jsonPath("$.[*].vat").doesNotExist())
+        .andExpect(jsonPath("$.[*].priceGross").doesNotExist())
+        .andExpect(jsonPath("$.[*].stock").doesNotExist())
+        .andExpect(jsonPath("$.[*].description").doesNotExist())
+        .andExpect(jsonPath("$.[*].createTime").doesNotExist())
+        .andExpect(jsonPath("$.[*].updateTime").doesNotExist())
+        .andExpect(jsonPath("$.[*].imageContentType").doesNotExist())
+        .andExpect(jsonPath("$.[*].image").doesNotExist());
+  }
+
+  @Test
+  @Transactional
+  public void getAllProductsByCategoryCollagen() throws Exception {
+    // Initialize the database
+    product.setPriceGross(defaultProperPriceGross);
+    product.setProductCategoryEnum(PRODUCT_CATEGORY_ENUM_Collagen);
+    productRepository.saveAndFlush(product);
+
+    // Get all the productListByCategoryCollagen
+    restProductMockMvc.perform(get("/api/category-collagen?sort=id,desc"))
+        .andExpect(status().isOk())
+        .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
+        .andExpect(
+            jsonPath("$.[*].id").value(hasItem(product.getId().intValue())))
+        .andExpect(jsonPath("$.[*].name").value(hasItem(DEFAULT_NAME)))
+        .andExpect(
+            jsonPath("$.[*].priceGross").value(hasItem(sameNumber(defaultProperPriceGross))))
+        .andExpect(jsonPath("$.[*].imageContentType").value(hasItem(DEFAULT_IMAGE_CONTENT_TYPE)))
+        .andExpect(
+            jsonPath("$.[*].image").value(hasItem(Base64Utils.encodeToString(DEFAULT_IMAGE))));
+  }
+
+  @Test
+  @Transactional
+  public void getAllProductsByCategoryCollagenShouldNotGetAnotherEntity() throws Exception {
+    // Initialize the database
+    product.setPriceGross(defaultProperPriceGross);
+    product.setProductCategoryEnum(PRODUCT_CATEGORY_ENUM_Probiotics);
+    productRepository.saveAndFlush(product);
+
+    // Get all the productListByCategoryCollagen
+    restProductMockMvc.perform(get("/api/category-collagen?sort=id,desc"))
+        .andExpect(status().isOk())
+        .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
+        .andExpect(jsonPath("$.[*].id").doesNotExist())
+        .andExpect(jsonPath("$.[*].productCategoryEnum").doesNotExist())
+        .andExpect(jsonPath("$.[*].name").doesNotExist())
+        .andExpect(jsonPath("$.[*].quantity").doesNotExist())
+        .andExpect(jsonPath("$.[*].priceNet").doesNotExist())
+        .andExpect(jsonPath("$.[*].vat").doesNotExist())
+        .andExpect(jsonPath("$.[*].priceGross").doesNotExist())
+        .andExpect(jsonPath("$.[*].stock").doesNotExist())
+        .andExpect(jsonPath("$.[*].description").doesNotExist())
+        .andExpect(jsonPath("$.[*].createTime").doesNotExist())
+        .andExpect(jsonPath("$.[*].updateTime").doesNotExist())
+        .andExpect(jsonPath("$.[*].imageContentType").doesNotExist())
+        .andExpect(jsonPath("$.[*].image").doesNotExist());
   }
 
   @Test

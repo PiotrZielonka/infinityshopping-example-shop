@@ -1,0 +1,22 @@
+{
+  "infinityshoppingApp": {
+    "categoryAloes": {
+      "home": {
+        "title": "Category Aloes",
+        "refreshListLabel": "Refresh list",
+        "notFound": "No Category Aloes found"
+      },
+      "productCategoryEnum": "Category",
+      "name": "Name",
+      "quantity": "Quantity",
+      "priceNet": "Net",
+      "vat": "Vat",
+      "priceGross": "Gross",
+      "stock": "Stock",
+      "description": "Description",
+      "createTime": "Created",
+      "updateTime": "Updated",
+      "image": "Image"
+    }
+  }
+}

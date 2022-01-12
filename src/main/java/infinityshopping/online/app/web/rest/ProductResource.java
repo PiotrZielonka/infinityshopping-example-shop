@@ -128,4 +128,63 @@ public class ProductResource {
             HeaderUtil.createEntityDeletionAlert(applicationName, true, ENTITY_NAME, id.toString()))
         .build();
   }
+
+  @GetMapping("/category-probiotics")
+  public ResponseEntity<List<ProductDtoImageNamePriceGross>>
+      getAllProductsByCategoryProbiotics(Pageable pageable) {
+    log.debug("REST request to get all Products by category probiotics");
+    Page<ProductDtoImageNamePriceGross> page
+        = productService.getAllProductsByCategoryProbiotics(pageable);
+    HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(
+        ServletUriComponentsBuilder.fromCurrentRequest(), page);
+    return ResponseEntity.ok().headers(headers).body(page.getContent());
+
+  }
+
+  @GetMapping("/category-vitamins")
+  public ResponseEntity<List<ProductDtoImageNamePriceGross>>
+      getAllProductsByCategoryVitamins(Pageable pageable) {
+    log.debug("REST request to get all Products by category probiotics");
+    Page<ProductDtoImageNamePriceGross> page
+        = productService.getAllProductsByCategoryVitamins(pageable);
+    HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(
+        ServletUriComponentsBuilder.fromCurrentRequest(), page);
+    return ResponseEntity.ok().headers(headers).body(page.getContent());
+
+  }
+
+  @GetMapping("/category-minerals")
+  public ResponseEntity<List<ProductDtoImageNamePriceGross>>
+      getAllProductsByCategoryMinerals(Pageable pageable) {
+    log.debug("REST request to get all Products by category minerals");
+    Page<ProductDtoImageNamePriceGross> page
+        = productService.getAllProductsByCategoryMinerals(pageable);
+    HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(
+        ServletUriComponentsBuilder.fromCurrentRequest(), page);
+    return ResponseEntity.ok().headers(headers).body(page.getContent());
+
+  }
+
+  @GetMapping("/category-aloes")
+  public ResponseEntity<List<ProductDtoImageNamePriceGross>>
+      getAllProductsByCategoryAloes(Pageable pageable) {
+    log.debug("REST request to get all Products by category aloes");
+    Page<ProductDtoImageNamePriceGross> page
+        = productService.getAllProductsByCategoryAloes(pageable);
+    HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(
+        ServletUriComponentsBuilder.fromCurrentRequest(), page);
+    return ResponseEntity.ok().headers(headers).body(page.getContent());
+
+  }
+
+  @GetMapping("/category-collagen")
+  public ResponseEntity<List<ProductDtoImageNamePriceGross>>
+      getAllProductsByCategoryCollagen(Pageable pageable) {
+    log.debug("REST request to get all Products by category collagen");
+    Page<ProductDtoImageNamePriceGross> page
+        = productService.getAllProductsByCategoryCollagen(pageable);
+    HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(
+        ServletUriComponentsBuilder.fromCurrentRequest(), page);
+    return ResponseEntity.ok().headers(headers).body(page.getContent());
+  }
 }

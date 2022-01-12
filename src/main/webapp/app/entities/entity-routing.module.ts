@@ -49,6 +49,31 @@ import { RouterModule } from '@angular/router';
         data: { pageTitle: 'infinityshoppingApp.shipmentOrderMain.home.title' },
         loadChildren: () => import('./shipment-order-main/shipment-order-main.module').then(m => m.ShipmentOrderMainModule),
       },
+      {
+        path: 'category-aloes',
+        data: { pageTitle: 'infinityshoppingApp.categoryAloes.home.title' },
+        loadChildren: () => import('./category-aloes/category-aloes.module').then(m => m.CategoryAloesModule),
+      },
+      {
+        path: 'category-collagen',
+        data: { pageTitle: 'infinityshoppingApp.categoryCollagen.home.title' },
+        loadChildren: () => import('./category-collagen/category-collagen.module').then(m => m.CategoryCollagenModule),
+      },
+      {
+        path: 'category-minerals',
+        data: { pageTitle: 'infinityshoppingApp.categoryMinerals.home.title' },
+        loadChildren: () => import('./category-minerals/category-minerals.module').then(m => m.CategoryMineralsModule),
+      },
+      {
+        path: 'category-probiotics',
+        data: { pageTitle: 'infinityshoppingApp.categoryProbiotics.home.title' },
+        loadChildren: () => import('./category-probiotics/category-probiotics.module').then(m => m.CategoryProbioticsModule),
+      },
+      {
+        path: 'category-vitamins',
+        data: { pageTitle: 'infinityshoppingApp.categoryVitamins.home.title' },
+        loadChildren: () => import('./category-vitamins/category-vitamins.module').then(m => m.CategoryVitaminsModule),
+      },
       /* jhipster-needle-add-entity-route - JHipster will add entity modules routes here */
     ]),
   ],

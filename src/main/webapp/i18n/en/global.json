@@ -17,6 +17,11 @@
         "paymentOrderMain": "Payment Order Main",
         "productInOrderMain": "Product In Order Main",
         "shipmentOrderMain": "Shipment Order Main",
+        "categoryAloes": "Category Aloes",
+        "categoryCollagen": "Category Collagen",
+        "categoryMinerals": "Category Minerals",
+        "categoryProbiotics": "Category Probiotics",
+        "categoryVitamins": "Category Vitamins",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

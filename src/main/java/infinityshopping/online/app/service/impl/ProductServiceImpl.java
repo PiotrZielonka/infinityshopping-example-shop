@@ -57,6 +57,46 @@ public class ProductServiceImpl implements ProductService, AddVat {
 
   @Override
   @Transactional(readOnly = true)
+  public Page<ProductDtoImageNamePriceGross> getAllProductsByCategoryProbiotics(Pageable pageable) {
+    log.debug("Request to get all Products by category probiotics");
+    return productRepository.getAllProductsByCategoryProbiotics(pageable)
+        .map(productMapper::toDtoImageNamePriceGross);
+  }
+
+  @Override
+  @Transactional(readOnly = true)
+  public Page<ProductDtoImageNamePriceGross> getAllProductsByCategoryVitamins(Pageable pageable) {
+    log.debug("Request to get all Products by category vitamins");
+    return productRepository.getAllProductsByCategoryVitamins(pageable)
+        .map(productMapper::toDtoImageNamePriceGross);
+  }
+
+  @Override
+  @Transactional(readOnly = true)
+  public Page<ProductDtoImageNamePriceGross> getAllProductsByCategoryMinerals(Pageable pageable) {
+    log.debug("Request to get all Products by category minerals");
+    return productRepository.getAllProductsByCategoryMinerals(pageable)
+        .map(productMapper::toDtoImageNamePriceGross);
+  }
+
+  @Override
+  @Transactional(readOnly = true)
+  public Page<ProductDtoImageNamePriceGross> getAllProductsByCategoryAloes(Pageable pageable) {
+    log.debug("Request to get all Products by category aloes");
+    return productRepository.getAllProductsByCategoryAloes(pageable)
+        .map(productMapper::toDtoImageNamePriceGross);
+  }
+
+  @Override
+  @Transactional(readOnly = true)
+  public Page<ProductDtoImageNamePriceGross> getAllProductsByCategoryCollagen(Pageable pageable) {
+    log.debug("Request to get all Products by category collagen");
+    return productRepository.getAllProductsByCategoryCollagen(pageable)
+        .map(productMapper::toDtoImageNamePriceGross);
+  }
+
+  @Override
+  @Transactional(readOnly = true)
   public Page<ProductDtoImageNamePriceGross> findAllImageNamePriceGross(Pageable pageable) {
     log.debug("Request to get all Products only with image name and price gross");
     return productRepository.findAll(pageable).map(productMapper::toDtoImageNamePriceGross);

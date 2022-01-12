@@ -1,0 +1,22 @@
+{
+  "infinityshoppingApp": {
+    "categoryProbiotics": {
+      "home": {
+        "title": "Category Probiotics",
+        "refreshListLabel": "Refresh list",
+        "notFound": "No Category Probiotics found"
+      },
+      "productCategoryEnum": "Category",
+      "name": "Name",
+      "quantity": "Quantity",
+      "priceNet": "Net",
+      "vat": "Vat",
+      "priceGross": "Gross",
+      "stock": "Stock",
+      "description": "Description",
+      "createTime": "Created",
+      "updateTime": "Updated",
+      "image": "Image"
+    }
+  }
+}

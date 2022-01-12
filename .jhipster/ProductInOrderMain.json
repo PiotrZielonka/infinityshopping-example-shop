@@ -68,5 +68,7 @@
   "readOnly": false,
   "pagination": "no",
   "name": "ProductInOrderMain",
+  "skipClient": true,
+  "skipServer": true,
   "changelogDate": "20211025120732"
 }

@@ -1,0 +1,22 @@
+{
+  "infinityshoppingApp": {
+    "categoryCollagen": {
+      "home": {
+        "title": "Kategoria Kolagen",
+        "refreshListLabel": "Odśwież",
+        "notFound": "No Category Collagen found"
+      },
+      "productCategoryEnum": "Kategoria",
+      "name": "Nazwa",
+      "quantity": "Ilość",
+      "priceNet": "Netto",
+      "vat": "Vat",
+      "priceGross": "Brutto",
+      "stock": "Magazyn",
+      "description": "Opis",
+      "createTime": "Utworzono",
+      "updateTime": "Aktualizacja",
+      "image": "Zdjęcie"
+    }
+  }
+}

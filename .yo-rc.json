@@ -43,7 +43,7 @@
     "clientPackageManager": "npm",
     "languages": ["en", "pl"],
     "enableGradleEnterprise": false,
-    "lastLiquibaseTimestamp": 1635163653000,
+    "lastLiquibaseTimestamp": 1642005614000,
     "entities": [
       "Product",
       "Cart",
@@ -54,7 +54,12 @@
       "OrderMain",
       "PaymentOrderMain",
       "ProductInOrderMain",
-      "ShipmentOrderMain"
+      "ShipmentOrderMain",
+      "CategoryAloes",
+      "CategoryCollagen",
+      "CategoryMinerals",
+      "CategoryProbiotics",
+      "CategoryVitamins"
     ]
   }
 }

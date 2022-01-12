@@ -12,6 +12,16 @@ public interface ProductService {
 
   Page<ProductDTO> findAll(Pageable pageable);
 
+  Page<ProductDtoImageNamePriceGross> getAllProductsByCategoryProbiotics(Pageable pageable);
+
+  Page<ProductDtoImageNamePriceGross> getAllProductsByCategoryVitamins(Pageable pageable);
+
+  Page<ProductDtoImageNamePriceGross> getAllProductsByCategoryMinerals(Pageable pageable);
+
+  Page<ProductDtoImageNamePriceGross> getAllProductsByCategoryAloes(Pageable pageable);
+
+  Page<ProductDtoImageNamePriceGross> getAllProductsByCategoryCollagen(Pageable pageable);
+
   Page<ProductDtoImageNamePriceGross> findAllImageNamePriceGross(Pageable pageable);
 
   Optional<ProductDTO> findOne(Long id);

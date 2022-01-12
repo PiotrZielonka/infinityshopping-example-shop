@@ -1,0 +1,66 @@
+<jhi-alert-error></jhi-alert-error>
+
+<jhi-alert></jhi-alert>
+
+<div class="row">
+    <div class="col-md-auto">
+        <h2 class="capitalize" jhiTranslate="infinityshoppingApp.categoryProbiotics.home.title">Category Probiotics</h2>
+    </div>
+
+    <div class="col">
+        <div class="form-inline my-2 my-lg-0">
+            <input type="search" class="form-control mr-sm-2" [(ngModel)]="searchProduct" placeholder="Search">
+        </div>
+    </div>
+
+    <div class="w-100"></div>
+
+    <div class="padding-top">
+      <div class="col">
+        <div class="btn-group" role="group" jhiSort [(predicate)]="predicate" [(ascending)]="ascending"
+          (sortChange)="loadPage()">
+          <button type="button" class="btn btn-outline-secondary btn-sm" jhiSortBy="name">
+            <span class="d-flex">
+              <span jhiTranslate="infinityshoppingApp.product.sortByName">Sort by name</span>
+              <fa-icon icon="sort" class="hiddenSortFaicon"></fa-icon>
+            </span>
+          </button>
+          <button type="button" class="btn btn-outline-secondary btn-sm" jhiSortBy="price_gross">
+            <span class="d-flex">
+              <span jhiTranslate="infinityshoppingApp.product.sortByPrice">Sort by price</span>
+              <fa-icon icon="sort" class="hiddenSortFaicon"></fa-icon>
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+
+<div class="alert alert-warning" id="no-result" *ngIf="categoryProbiotics?.length === 0">
+    <span jhiTranslate="infinityshoppingApp.categoryProbiotics.home.notFound">No Category Probiotics found</span>
+</div>
+<div class="container">
+    <div class="row card-group">
+        <div class="col-xs-6 col-md-4" *ngFor="let categoryProbiotic of categoryProbiotics | filter: searchProduct; trackBy: trackId">
+            <div class="card border-secondary mb-3" style="max-width: 20rem;">
+                <div class="card-body">
+                  <div class="image">
+                    <a *ngIf="categoryProbiotic.image" (click)="openFile(categoryProbiotic.image, categoryProbiotic.imageContentType)">
+                      <img [src]="'data:' + categoryProbiotic.imageContentType + ';base64,' + categoryProbiotic.image" style="max-height: 220px"
+                        alt="categoryProbiotic image" />
+                    </a>
+                  </div>
+                    <h4 class="card-title" class="capitalize">{{ categoryProbiotic.name }}</h4>
+                    <div >
+                        <p class="card-text">{{ categoryProbiotic.priceGross }} $
+                            <button type="submit" [routerLink]="['/product', categoryProbiotic.id, 'view']" class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

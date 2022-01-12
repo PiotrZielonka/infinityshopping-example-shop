@@ -2,8 +2,11 @@
   "infinityshoppingApp": {
     "ProductCategoryEnum": {
       "null": "",
+      "Aloes": "Aloes",
       "Vitamins": "Witaminy",
-      "Minerals": "Minerały"
+      "Minerals": "Minerały",
+      "Probiotics": "Probiotyki",
+      "Collagen": "Kolagen"
     }
   }
 }

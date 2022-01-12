@@ -1,0 +1,22 @@
+{
+  "infinityshoppingApp": {
+    "categoryCollagen": {
+      "home": {
+        "title": "Category Collagen",
+        "refreshListLabel": "Refresh list",
+        "notFound": "No Category Collagen found"
+      },
+      "productCategoryEnum": "Category",
+      "name": "Name",
+      "quantity": "Quantity",
+      "priceNet": "Net",
+      "vat": "Vat",
+      "priceGross": "Gross",
+      "stock": "Stock",
+      "description": "Description",
+      "createTime": "Created",
+      "updateTime": "Updated",
+      "image": "Image"
+    }
+  }
+}
