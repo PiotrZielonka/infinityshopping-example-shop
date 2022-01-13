@@ -1,28 +1,94 @@
-/* ==========================================================================
-Main page styles
-========================================================================== */
-
-.welcomeToFont {  
-  text-transform: lowercase;
-  font-size: 42px;
+.homeCategories ul {
+  padding-left: 40px;
+  padding-top: 10px;
+  padding-bottom: 12px;
 }
 
-.hipster {
-  display: inline-block;
-  width: 347px;
-  height: 497px;
-  background: url('../../content/images/jhipster_family_member_0.png') no-repeat center top;
-  background-size: contain;
+.homeCategories ul li {
+  list-style: none;
 }
 
-/* wait autoprefixer update to allow simple generation of high pixel density media query */
-@media only screen and (-webkit-min-device-pixel-ratio: 2),
-  only screen and (-moz-min-device-pixel-ratio: 2),
-  only screen and (-o-min-device-pixel-ratio: 2/1),
-  only screen and (min-resolution: 192dpi),
-  only screen and (min-resolution: 2dppx) {
-  .hipster {
-    background: url('../../content/images/jhipster_family_member_0.svg') no-repeat center top;
-    background-size: contain;
-  }
+.homeCategories ul li a {
+  font-size: 16px;
+  color: #1c1c1c;
+  line-height: 39px;
+  display: block;
+}
+
+.card-header {
+  font-size: 20px;
+  background: #7fad39;
+  text-align: center;
+  color: white;
+}
+.carouselFont {
+  font-size: 32px;
+  color: white;
+  font-weight: 600;
+}
+
+.latestProduct {
+  padding-top: 10px;
+  padding-bottom: 0;
+}
+
+.latestProductText h4 {
+  font-weight: 700;
+  color: #1c1c1c;
+  margin-bottom: 15px;
+  padding-left: 45px;
+}
+
+.latestProductItem {
+  margin-bottom: 20px;
+  overflow: hidden;
+  display: block;
+}
+
+.latestProductItemPic {
+  float: left;
+  margin-right: 26px;
+  margin-top: 13px;
+}
+
+.latestProductItemPic img {
+  height: 110px;
+  width: 110px;
+}
+
+.latestProductItemText {
+  overflow: hidden;
+  padding-top: 10px;
+}
+
+.latestProductItemText h6 {
+  color: #252525;
+  margin-bottom: 8px;
+}
+
+.latestProductItemText p {
+  font-size: 15px;
+  display: block;
+  color: #252525;
+  font-weight: bold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.padding-bottom-card-text {
+  padding-bottom: 0px;
+}
+
+.padding-top-card-text {
+  padding-top: 20px;
+}
+
+.padding-inside-card-text {
+  padding-bottom: 34px;
+}
+
+.informationAboutTheProject {
+  font-size: 14px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  font-weight: 550;
 }

@@ -28,8 +28,8 @@
         <tr *ngFor="let productInCart of productInCarts; trackBy: trackId" data-cy="entityTable">
           <td>{{ productInCart.name }}</td>
           <td>{{ productInCart.quantity }}</td>
-          <td>{{ productInCart.priceGross }}</td>
-          <td>{{ productInCart.totalPriceGross }}</td>
+          <td>{{ productInCart.priceGross }} $</td>
+          <td>{{ productInCart.totalPriceGross }} $</td>
           <td>
             <a *ngIf="productInCart.image" (click)="openFile(productInCart.image, productInCart.imageContentType)">
               <img [src]="'data:' + productInCart.imageContentType + ';base64,' + productInCart.image"

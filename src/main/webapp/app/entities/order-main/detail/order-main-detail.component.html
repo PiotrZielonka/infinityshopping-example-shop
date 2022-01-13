@@ -42,9 +42,9 @@
           <td>{{ orderMain.buyerLastName }}</td>
           <td>{{ orderMain.buyerEmail }}</td>
           <td>{{ orderMain.buyerPhone }}</td>
-          <td>{{ orderMain.amountOfCartGross }}</td>
-          <td>{{ orderMain.amountOfShipmentGross }}</td>
-          <td>{{ orderMain.amountOfOrderGross }}</td>
+          <td>{{ orderMain.amountOfCartGross }} $</td>
+          <td>{{ orderMain.amountOfShipmentGross }} $</td>
+          <td>{{ orderMain.amountOfOrderGross }} $</td>
           <td jhiTranslate="{{ 'infinityshoppingApp.OrderMainStatusEnum.' + orderMain.orderMainStatus }}">
             {{ orderMain.orderMainStatus }}
           </td>
@@ -85,8 +85,8 @@
           <td>{{ i + 1 }}</td>
           <td>{{ productInOrderMain.name }}</td>
           <td>{{ productInOrderMain.quantity }}</td>
-          <td>{{ productInOrderMain.priceGross }}</td>
-          <td>{{ productInOrderMain.totalPriceGross }}</td>
+          <td>{{ productInOrderMain.priceGross }} $</td>
+          <td>{{ productInOrderMain.totalPriceGross }} $</td>
           <td>
             <a *ngIf="productInOrderMain.image"
               (click)="openFile(productInOrderMain.image, productInOrderMain.imageContentType)">

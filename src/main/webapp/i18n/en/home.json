@@ -1,28 +1,12 @@
 {
   "home": {
-    "title": "Welcome to infinityshopping!",
-    "subtitle": "Choose from 21 store templates (everything will change in the whole design, buttons, background, etc.) then design this home page and an e-commerce shop is going to be yours.",
+    "title": "Example-Shop",
+    "latestProducts": "Latest Products",
+    "reviewProducts": "Review Products",
+    "topRatedProducts": "Top Rated Products",
+    "allCategories": "All categories",
     "logged": {
       "message": "You are logged in as user \"{{username}}\"."
-    },
-    "moreInformation": "More information about Infinity Shopping:",
-    "infinityShoppingLink": {
-      "homepage": "Infinity Shopping homepage",
-      "gitHub": "Infinity Shopping on GitHub",
-      "exampleShopPage": "Website of example shop of Infinity Shopping",
-      "exampleShopGitHub": "GitHub of example shop of Infinity Shopping",
-      "youTube": "YouTube"
-    },
-    "likeInfinityShopping": "If you like Infinity Shopping, don't forget to give us a star on GitHub!",
-    "question": "If you have any question on JHipster:",
-    "link": {
-      "homepage": "JHipster homepage",
-      "stackoverflow": "JHipster on Stack Overflow",
-      "bugtracker": "JHipster bug tracker",
-      "chat": "JHipster public chat room",
-      "follow": "follow @jhipster on Twitter"
-    },
-    "like": "If you like JHipster, don't forget to give us a star on",
-    "github": "GitHub"
+    }
   }
 }

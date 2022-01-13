@@ -1,6 +1,6 @@
 {
   "global": {
-    "title": "infinityshopping",
+    "title": "example-shop",
     "browsehappy": "Używasz <strong>przestarzałej</strong> przeglądarki. Proszę <a href=\"http://browsehappy.com/\">uaktualnij swoją przeglądarkę</a> aby poprawić wrażenia z użytkowania tej aplikacji.",
     "menu": {
       "home": "Strona domowa",
@@ -160,5 +160,15 @@
       "not.image": "File was expected to be an image but was found to be \"{{ fileType }}\""
     }
   },
-  "footer": "To jest stopka"
+  "categories": {
+    "probiotics": "Probiotyki",
+    "aloes": "Aloes",
+    "vitamins": "Witaminy",
+    "minerals": "Minerały",
+    "collagen": "Kolagen"
+  },
+  "carousel-caption": {
+    "firstSlide": "Żyj szczęśliwie żyj zdrowo",
+    "secondSlide": "Dbaj o siebie i o swoich najbliższych"
+  }
 }
