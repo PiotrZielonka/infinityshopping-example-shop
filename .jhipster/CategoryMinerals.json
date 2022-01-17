@@ -72,7 +72,6 @@
   "readOnly": false,
   "pagination": "pagination",
   "name": "CategoryMinerals",
-  "skipClient": false,
-  "skipServer": true,
-  "changelogDate": "20220112164012"
+  "skipClient": true,
+  "skipServer": true
 }

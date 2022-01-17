@@ -73,6 +73,5 @@
   "pagination": "no",
   "name": "OrderMain",
   "skipClient": true,
-  "skipServer": true,
-  "changelogDate": "20211025120730"
+  "skipServer": true
 }

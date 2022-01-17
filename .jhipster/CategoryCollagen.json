@@ -72,7 +72,6 @@
   "readOnly": false,
   "pagination": "pagination",
   "name": "CategoryCollagen",
-  "skipClient": false,
-  "skipServer": true,
-  "changelogDate": "20220112164011"
+  "skipClient": true,
+  "skipServer": true
 }

@@ -72,7 +72,6 @@
   "readOnly": false,
   "pagination": "pagination",
   "name": "CategoryProbiotics",
-  "skipClient": false,
-  "skipServer": true,
-  "changelogDate": "20220112164013"
+  "skipClient": true,
+  "skipServer": true
 }

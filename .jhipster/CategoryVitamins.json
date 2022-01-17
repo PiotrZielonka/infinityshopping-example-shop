@@ -72,7 +72,6 @@
   "readOnly": false,
   "pagination": "pagination",
   "name": "CategoryVitamins",
-  "skipClient": false,
-  "skipServer": true,
-  "changelogDate": "20220112164014"
+  "skipClient": true,
+  "skipServer": true
 }
