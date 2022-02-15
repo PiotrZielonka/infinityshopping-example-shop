@@ -1,10 +1,12 @@
-# This is the example shop of Infinityshopping platform
+# This is the example shop of InfinityShopping platform
 
-[Infinityshopping home page](https://www.infinityshopping.online).
+[InfinityShopping home page](https://www.infinityshopping.online).
 
-[Infinityshopping on GitHub](https://www.github.com/PiotrZielonka/infinityshopping/tree/develop).
+[InfinityShopping on GitHub](https://www.github.com/PiotrZielonka/infinityshopping/tree/develop).
 
 [Website of example shop of infinityshopping](https://www.infinityshopping.online/example-shop).
+
+[YouTube](https://www.youtube.com/watch?v=YYEodtIGeZQ)
 
 ## Development
 
