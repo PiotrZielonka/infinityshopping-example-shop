@@ -67,4 +67,4 @@ After setting up the project, you can extend it with additional features:
 
 ## 🤝 Contributing
 We welcome contributions to InfinityShopping! 
-If you have any questions, visit [InfinityShopping Contact Page](https://www.infinityshopping.online)
+If you have any questions visit [InfinityShopping Contact Page](https://www.infinityshopping.online)
